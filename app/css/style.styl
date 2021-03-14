@@ -1,0 +1,688 @@
+//@import "grid/_grid.styl"
+@import 'rupture'
+@import "variable/_function.styl"
+@import "variable/_ie.styl"
+@import "variable/_helper.styl"
+@import "grid/grid.css"
+@import "grid/extends.css"
+
+@import "variable/config/_config.styl"
+@import "variable/config/_grid.styl"
+@import "variable/_default.styl"
+
+@import "variable/config/_color.styl"
+@import "variable/config/_typography.styl"
+@import "variable/config/_btn.styl"
+@import "variable/config/_input.styl"
+@import "../module/**/*"
+
+body
+	@extend .type--main
+	font-family $font
+	color black
+	line-height 1.4
+
+.main-cont
+	center(1630px,20px)
+.main-cont--md
+	center(1370px,20px)
+.main-cont--sm
+	center(900px,20px)
+
+.page
+	f()
+	fl()
+	min-height 100vh
+
+.content
+	flex-grow 1
+
+.content--mid
+	flex(mid)
+
+// animate top menu
+@keyframes slideInDown
+	from
+		transform: translate3d(0, -100%, 0)
+		visibility: visible;
+	to
+		transform: translate3d(0, 0, 0)
+
+.shrink
+	position fixed
+	top 0
+	left 0
+	background white
+	width 100%
+	margin 0
+	animation:  slideInDown  1s 1 ease-in-out;
+	z-index 10
+// animate top menu === end
+
+// error
+.page-error
+	flex(mid)
+	fl()
+	height: 100%
+.page-error__title
+	@extend .type--xl
+	margin-bottom: 30px
+	font-weight: 700
+	color $gray
+.page-error__img
+	margin-bottom: 30px
+.page-error__text
+	@extend .type--md
+	color $gray
+	margin-bottom: 30px
+.page-error__get
+	@extend .btn--md
+	@extend .btn--mark
+// error === end
+
+// modal
+.modal-layer
+	width: 100%
+	height: 100vh
+	position: fixed
+	z-index 1000
+	top 0
+	left 0
+	visibility: hidden
+	transition all .8s // duration for fade
+	opacity 0
+	&.active
+		visibility: visible
+		opacity 1
+		transition all .4s // duration for fade
+
+.modal-filter
+	position: absolute
+	top: 0
+	left: 0
+	background: #18191da1
+	width: 100%
+	height: 100vh
+	min-height 100vh
+
+.modal-wrap
+	position: fixed
+	width: 100%
+	height: 100%
+	overflow-y auto
+	flex(mid)
+
+.modal
+	+below(640px)
+		width: 100%
+		box-shadow 0 0 0
+	transform scale(.9) translateZ(0) translate3d(0, 0, 0)
+	will-change: transform, opacity;
+	backface-visibility: hidden
+	position: absolute
+	opacity 0
+	transition transform .6s, opacity .4s
+	max-width 400px
+	left -9999px
+	top -9999px
+	&.active
+		max-height 100%
+		opacity 1
+		transform scale(1) translateZ(0) translate3d(0, 0, 0)
+		position: relative
+		z-index 1000
+		left initial
+		top initial
+		will-change: transform, opacity
+	&.modal-hide-animation
+		transform scale(.9)
+		opacity 0
+		transition transform .6s, opacity .8s
+
+
+.modal-content
+	+below(640px)
+		height: 100%
+		padding: 20px
+		overflow-y scroll
+		width: 95%!important
+	margin: 20px auto
+	background: white
+	position: relative
+	padding: 40px 45px
+	br(40px)
+
+.modal-close
+	+below(768px)
+		top 12px
+		right 12px
+	position: absolute
+	top: 20px
+	right: 20px
+	cp()
+	size 50px
+	br(20px)
+	flex(mid)
+	z-index 10
+	background: #f8f8f8
+	&:hover
+		.icon
+			opacity: 1
+	.icon
+		tr()
+		size 12px
+		fill black
+		opacity:.3
+// modal === end
+
+// slider menu
+.head-toggle
+	cp()
+	+above(1025px)
+		display: none
+	.icon-close
+		display: none
+
+.head-toggle
+	&.active
+		.icon-close
+			display: block
+		.icon-open
+			display: none
+
+.slide-block
+	+below(640px)
+		top 60px
+		height: calc(100% - 60px) // Высота шапки
+	+below(480px)
+		width: 100%
+	position: fixed
+	top 60px // Высота шапки
+	width: 360px
+	tr(all)
+	height: calc(100% - 60px) // Высота шапки
+	z-index 100
+	background: white
+	&.active
+		transform translateX(0%)
+.slide-block--left
+	left 0
+	transform translateX(-100%)
+
+.slide-block--right
+	right 0
+	transform translateX(100%)
+
+.slide-nav__el
+	display  block
+
+.slide-block-wrap
+	padding: 24px
+
+// slider menu === end
+
+
+// header
+.header-wrap
+	background: white
+	box-shadow: 0px 4px 8px rgba(102, 130, 185, 0.12);
+
+.header
+	+below(1200px)
+		height: 60px
+	height: 100px
+	flex(between)
+
+.logo
+	+below(640px)
+		width: 160px
+	width: 200px
+
+.header-nav
+	+below(1200px)
+		display none
+	flex(between)
+	width: 55%
+	margin-left auto
+
+.header-nav__el
+	@extend .link
+	font-weight: 700
+// header === end
+
+// main-banner
+.main-banner-wrap
+	background: $green
+.main-banner
+	height calc(100vh - 100px)
+	f()
+	justify-content space-between
+.main-banner__img
+	width: 48%
+	f()
+	align-items: flex-end
+.main-banner__img-el
+	bg-full()
+	width: 100%
+	padding: 44%
+.main-banner__cont
+	width: 48%
+	color white
+	f()
+	justify-content center
+	fl()
+
+// main-banner === end
+.advant-el
+	.icon
+		size 100px
+		margin-bottom: 24px
+
+.banner-preview__img
+	f()
+.extendUp-img-wrap
+	f()
+	align-items: flex-end
+	justify-content center
+.extendUp-img
+	+below(1024px)
+		margin-top: 40px
+	margin: -5% 0 0 0
+
+.banner-preview
+	f()
+	background: white
+	br(10px)
+	overflow: hidden
+.banner-preview__img
+	width: 50%
+	bg-full()
+	flex(mid)
+	img
+		width: 75%
+
+.banner-preview__info
+	width: 50%
+	padding: 90px
+
+// config
+
+.config
+	height: 0
+	overflow: hidden
+	opacity: 0
+	tr(all)
+	transform: scale(.95, .95)
+	&.active
+		transform: scale(1, 1)
+		opacity: 1
+		height: auto
+
+.config-nav
+	flex(mid)
+.config-nav__el
+	flex(mid)
+	br(8px)
+	box-shadow: 0px 4px 8px rgba(102, 130, 185, 0.12)
+	border 1px solid transparent
+	padding: 18px 36px
+	margin-right: 40px
+	cp()
+	transition color .4s
+	&:last-child
+		margin-right: 0
+	&:hover
+		color $mark
+		.icon
+			fill $mark
+	.icon
+		size 42px
+		margin-right: 16px
+		tr()
+	&.active
+		box-shadow 0 0 0
+		border 1px solid $mark
+		color $mark
+		.icon
+			fill $mark
+
+.config-info
+	width: 100%
+
+.config-preview-nav__el
+	bg-full()
+	br(8px)
+	padding: 40%
+	margin-bottom: 12px
+	cp()
+	tr()
+	&:last-child
+		margin-bottom: 0
+	&:hover
+		opacity: .6
+	&.active
+		opacity: .6
+.config-slider__el-wrap
+	transform: scale(.95, .95)
+.config-slider
+	.slick-active
+		overflow: hidden
+		.config-slider__el-wrap
+			transition transform .4s ease-in-out
+			transform: scale(1, 1);
+
+.config-slider__el
+	bg-full()
+	padding: 45% 10%
+	br(20px)
+
+// config === end
+
+
+.title
+	position relative
+	z-index 5
+.title__shadow
+	position absolute
+	left 0
+	bottom 0
+	font-size: 100px
+	text-align center
+	width: 100%
+	color #E0E3ED
+	z-index -1
+
+.work-el
+	.icon
+		size 100px
+		margin-bottom: 16px
+	padding: 40px
+	flex(mid)
+	fl()
+	text-align center
+
+.work-el-title
+	z-index 5
+
+.brush
+	position absolute
+	bg-full()
+	background-size contain
+	width: 100%
+	padding: 5%
+	top: -10%
+	z-index -1
+
+// review slider
+.review-slider
+	.slick-slide
+		+below(1024px)
+			margin: 0 8px
+		margin: 0 14px
+	.slick-list
+		+below(1024px)
+			margin: 0 -8px
+		margin: 0 -14px
+.review-slider__el
+	bg-full()
+	padding: 80% 10%
+	br(20px)
+// review slider === end
+
+
+// accordion
+.accordion
+	+below(640px)
+		width 100%
+
+	opacity: 0
+	left -9999px
+	visibility: hidden
+	position absolute
+	transform translateX(10px)
+	transition opacity 1.2s, transform .8s
+	&.active
+		transform translateX(0px)
+		visibility: visible
+		opacity: 1
+		left initial
+		position: static
+.accordion__el
+	border 1px solid #e5e5e5
+	margin-top: -1px
+	background: white
+	cp()
+	&:hover
+		.accordion__el-head-icon
+			&:before
+				content ''
+				background: $green
+			&:after
+				content ''
+				background: $green
+	&:first-child
+		border-radius 10px 10px 0 0
+	&:last-child
+		border-radius  0 0 10px 10px
+.accordion__el-head
+	+below(640px)
+		padding: 20px
+	padding: 30px 40px
+	flex(between)
+	color black
+	&.active
+		.accordion__el-head-text
+			color $green
+		.accordion__el-head-icon
+			&:after
+				content ''
+				transform rotate(45deg)
+			&:before
+				content ''
+				transform rotate(45deg)
+.accordion__el-head-text
+	+below(640px)
+		line-height: 1.6
+	@extend .type--md
+	width: 80%
+	font-weight: 700
+
+.accordion__el-head-icon
+	+below(640px)
+		size 16px
+	position: relative
+	size 24px
+	&:before
+		content ''
+		tr(all)
+		height: 2px
+		width: 100%
+		background: black
+		position: absolute
+		top calc(50% - 1px)
+	&:after
+		content ''
+		tr(all)
+		height: 100%
+		width: 2px
+		background: black
+		position: absolute
+		left calc(50% - 1px)
+
+.accordion__el-content
+	+below(640px)
+		padding:0 20px 20px 20px
+	padding: 0 40px 40px 40px
+	display: none
+	p
+		color $typePrimary
+		&:first-child
+			margin-top: 0
+		&:last-child
+			margin-bottom: 0
+
+
+// accordion === end
+
+// delivery
+.delivery-cont
+	padding: 140px 0
+	position relative
+	.map
+		position absolute
+		width: 100%
+		height: 100%
+		background: $greenLight
+		top 0
+		left 0
+.delivery-msg-wrap
+	position relative
+	f()
+	justify-content: flex-end
+	align-items: stretch
+.delivery-msg
+	z-index 5
+	background: white
+	width: 40%
+	br(20px)
+	padding: 80px
+.deliver-pick__el
+	f()
+	align-items center
+	margin-bottom: 22px
+	&:last-child
+		margin-bottom: 0
+.deliver-pick__el-color
+	round()
+	size 24px
+	margin-right: 16px
+.deliver-pick__el-text
+	font-weight 700
+	color black
+// delivery === end
+
+// soc-row
+.soc-row
+	f()
+
+.soc-row--mid
+	flex(mid)
+
+.soc-row--lg
+	.soc-row__el
+		+below(360px)
+			size 56px
+		size 72px
+.soc-row__el
+	round()
+	flex(mid)
+	tr(all)
+	margin-right: 16px
+	size 48px
+	background: #787775
+	&:last-child
+		margin-right: 0
+	.icon
+		fill white
+		size 20px
+.soc-row--monochrome
+	.soc-row__el
+		background: rgba(255,255,255,0.1)
+		&:hover
+			background: rgba(255,255,255,0.2)
+		.icon
+			fill white
+// soc-row === end
+
+// footer
+.footer-wrap
+	background: black
+	a
+		&:hover
+			color $mark
+	padding: 40px 0
+.footer
+	flex(between)
+.footer-logo
+	margin-right: 5%
+.footer-nav
+	flex(between)
+	width: 40%
+.footer-nav__el
+	color white
+.footer-politick
+	color $typeSecondary
+	margin: 0 auto
+.footer-scroll
+	+below(1280px)
+		margin-left: 20px
+	+below(768px)
+		order 2
+	+below(640px)
+		order 1
+		margin 0 0 32px 0
+	size 64px
+	min-width 64px
+	round()
+	flex(mid)
+	background: #ffffff1a
+	cp()
+	tr()
+	margin-left: 2%
+	&:hover
+		background: #ffffff26
+		.icon
+			transform translateY(-3px)
+	.icon
+		transform translateY(0)
+		tr()
+		fill white
+		size 20px
+// footer === end
+
+
+// config box
+.config-box
+	max-width 1200px
+	width: 100%
+	margin-left auto
+	margin-right auto
+	padding: 80px
+.config-el
+	padding: 20px
+	f()
+	align-items center
+	fl()
+	background: $greenLight
+	br(10px)
+	cp()
+	&.active
+		background $mark
+		.config-el__val
+			color white
+		.config-el__title
+			color white
+		.config-el__descr
+			color white
+.config-el__val
+	@extend .type--xl
+	font-weight: 700
+	color $green
+.config-el__title
+	color $green
+	font-weight: 700
+.config-el__descr
+	color #A9D96B
+	font-weight: 400
+
+.config-state-row
+	flex(mid)
+.config-state-row__val
+	width: 50%
+	text-align: right
+	margin-right: 40px
+.config-state-row__descr
+	width: 50%
+.line
+	height: 1px
+// config box === end

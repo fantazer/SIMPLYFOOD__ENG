@@ -1,0 +1,137 @@
+include block_html/_style.pug
+include block_html/_include.pug
+
+.page
+	+header()
+	.content.bg--snow
+		.pt-80.pb-80
+			.config-box.br--20.bg--white
+				.type--xl.type--800.mb-48.type--mid Adjust your diet
+				.type--lg.type--700.mb-20.type--mid Exclusions
+				.f.f-mid
+					.w55
+						.text.mb-20.type--mid
+							p We cater to your specific needs.<br> You can select up to 2 , so let us know of any allergies or intolerances below - please note we are already 100% Gluten free.
+						.input-row.mb-48
+							input(type="text"  class="input")
+
+				.type--lg.type--700.mb-20.type--mid Choose your meals
+				.type--md.type--700.mb-20.type--mid How many meals per day?
+				.g.g-3.gap-40.js-tick-cont.mb-48
+					.config-el.active.js-tick
+						.config-el__val 2
+						.config-el__title meals/day
+					.config-el.js-tick
+						.config-el__val 3
+						.config-el__title.mb-4 meals/day
+						.config-el__descr invludes breackfast
+					.config-el.js-tick
+						.config-el__val 4
+						.config-el__title.mb-4 meals/day
+						.config-el__descr invludes breackfast
+
+				.type--md.type--700.mb-20.type--mid How many days per week?
+				.g.g-4.gap-40.js-tick-cont.mb-48
+					.config-el.active.js-tick
+						.config-el__val 3
+						.config-el__title meals/day
+					.config-el.js-tick
+						.config-el__val 4
+						.config-el__title.mb-4 meals/day
+					.config-el.js-tick
+						.config-el__val 5
+						.config-el__title.mb-4 meals/day
+					.config-el.js-tick
+						.config-el__val 6
+						.config-el__title.mb-4 meals/day
+
+				.type--md.type--700.mb-20.type--mid Which four days will you eat your SimplyFood meals?
+				.g.g-6.mb-48.gap-24
+					-
+						var items = [
+							'Sunday',
+							'Monday',
+							'Tuesday',
+							'Wednesday',
+							'Thursday',
+							'Friday',
+							];
+					each item,i in items
+						.config-el.js-toggle(class=i===2?'active':'')
+							.config-el__title #{item}
+				.config-state-row
+					.config-state-row__val
+						.type--lg.type--700 15
+					.config-state-row__descr
+						.type--typeSecondary.type--700 Total meals/week
+				.config-state-row
+					.config-state-row__val
+						.type--lg.type--700 £ 9.03
+					.config-state-row__descr
+						.type--typeSecondary.type--700 Average price/meal
+
+				.line.mt-48.mb-48.bg--snow
+
+				.type--lg.type--700.mb-20.type--mid Choose duration
+				.type--md.type--700.mb-20.type--mid Subscribe for longer for even better value
+				.g.g-4.gap-40.js-tick-cont.mb-48
+					.config-el.active.js-tick
+						.config-el__val 2
+						.config-el__title days/week
+					.config-el.js-tick
+						.config-el__val 3
+						.config-el__title weeks
+					.config-el.js-tick
+						.config-el__val 8
+						.config-el__title weeks
+					.config-el.js-tick
+						.config-el__val 12
+						.config-el__title weeks
+
+				.line.mt-48.mb-48.bg--snow
+
+				.config-state-row.mb-20
+					.config-state-row__val
+						.type--mdx.type--700 3 meals/day
+					.config-state-row__descr
+						.type--typeSecondary.type--700 Meals
+
+				.config-state-row.mb-20
+					.config-state-row__val
+						.type--mdx.type--700 5 days/week
+					.config-state-row__descr
+						.type--typeSecondary.type--700 Days
+
+				.config-state-row
+					.config-state-row__val
+						.type--mdx.type--700 8 weeks
+					.config-state-row__descr
+						.type--typeSecondary.type--700 Duration
+
+				.line.mt-48.mb-48.bg--snow
+
+				.config-state-row.mb-20
+					.config-state-row__val
+						.type--mdx.type--700 £ 9.19
+					.config-state-row__descr
+						.type--typeSecondary.type--700 Price per Meal
+						.type--typeSecondary Longer subscription, better value
+
+				.config-state-row.mb-20
+					.config-state-row__val
+						.type--mdx.type--700 £ 0
+					.config-state-row__descr
+						.type--typeSecondary.type--700 Discount
+
+				.config-state-row.mb-48
+					.config-state-row__val
+						.type--mdx.type--700 £ 110.28
+					.config-state-row__descr
+						.type--typeSecondary.type--700 Weekly Subscription
+						.type--typeSecondary The convenience of weekly payments
+
+				.f.f-mid
+					.btn.btn--lg.btn--mark Proceed to checkout
+	+footer()
+	+modal()
+include ./block_html/_script.pug

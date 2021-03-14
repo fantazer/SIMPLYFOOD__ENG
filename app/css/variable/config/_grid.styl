@@ -1,0 +1,70 @@
+.g
+	display: grid
+
+.f
+	display: flex
+
+.dif
+	display: inline-flex
+
+.fw
+	flex-wrap wrap
+
+.f-col
+	flex-direction column
+
+.f-row
+	flex-direction row
+
+.f-mid
+	align-items center
+	justify-content center
+
+.f-aic
+	align-items center
+
+.f-aife
+	align-items: flex-end
+
+.f-aifs
+	align-items: flex-start
+
+.f-between
+	align-items center
+	justify-content space-between
+
+.f-jcsb
+	justify-content space-between
+
+.f-jcc
+	justify-content center
+
+.f-jcfe
+	justify-content flex-end
+
+.f-jcfs
+	justify-content flex-start
+
+.alignSelf-fs
+	align-self: flex-start
+
+.alignSelf-fe
+	align-self: flex-end
+
+.db
+	display block
+
+.dib
+	display inline-block
+
+
+for $windowSizeItem in $windowSize
+	.{$windowSizeItem[0]}__show
+		//@media only screen and ({max-width} - ({$windowSizeItem[1]})px)
+		@media only screen and (max-width: $windowSizeItem[1]px)
+			display none!important
+	.{$windowSizeItem[0]}__hide
+		@media only screen and (min-width: $windowSizeItem[1]px)
+			display block
+
+

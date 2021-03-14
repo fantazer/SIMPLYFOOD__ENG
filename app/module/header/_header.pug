@@ -1,0 +1,40 @@
+mixin header()
+	//block header
+	.header-wrap
+		.main-cont
+			.header
+				a(href="/").logo
+					img(src="img/logo.svg", alt="")
+				.header-nav
+					-
+						var items = [
+							{name: "Advantages", id: "#advantages"},
+							{name: "Menu", id: "#menu"},
+							{name: "Trial week", id: "#trial"},
+							{name: "How it works", id: "#how"},
+							{name: "Reviews", id: "#reviews"},
+							{name: "FAQ", id: "#faq"},
+							{name: "Delivery", id: "#delivery"},
+						];
+					each item in items
+						a(href=item.id).header-nav__el.js-scroll-to #{item.name}
+				.head-toggle.js-slide-block-toggle(data-menu="menu")
+					+icon("menu","icon icon-open")
+					+icon("close","icon icon-close")
+	// mobile menu
+	.slide-block.slide-block--right.slide-block--menu(data-menu="menu")
+		.slide-block-wrap.js-accordion
+			.slide-nav
+				-
+					var items = [
+						{name: "Меню", id: "#navMenu"},
+						{name: "Как это работает", id: "#navWork"},
+						{name: "Пробный день", id: "#navTest"},
+						{name: "Отзывы", id: "#navReview"},
+						{name: "FAQ", id: "#navFAQ"},
+						{name: "Доставка", id: "#navDelivery"},
+					];
+				each item in items
+					a(href = item.id).slide-nav__el.js-scroll-to #{item.name}
+
+	//block header end
