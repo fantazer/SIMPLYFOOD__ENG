@@ -122,7 +122,7 @@ body
 	position: absolute
 	opacity 0
 	transition transform .6s, opacity .4s
-	max-width 400px
+	max-width 468px
 	left -9999px
 	top -9999px
 	&.active
@@ -149,62 +149,67 @@ body
 	margin: 20px auto
 	background: white
 	position: relative
-	padding: 40px 45px
-	br(40px)
+	padding: 40px 50px 50px 50px
+	br(10px)
 
 .modal-close
 	+below(768px)
 		top 12px
 		right 12px
 	position: absolute
-	top: 20px
-	right: 20px
+	top: 16px
+	right: 16px
 	cp()
-	size 50px
-	br(20px)
 	flex(mid)
 	z-index 10
-	background: #f8f8f8
 	&:hover
 		.icon
 			opacity: 1
 	.icon
 		tr()
-		size 12px
+		size 20px
 		fill black
 		opacity:.3
 // modal === end
 
 // slider menu
+// slider menu
 .head-toggle
-	cp()
-	+above(1025px)
+	+above(1023px)
 		display: none
+	+below(1024px)
+		size 60px
+	flex(mid)
+	cp()
+	size 80px
+	margin-right: -20px
+	.icon
+		+below(640px)
+			size 20px
+		size 25px
+		fill black
 	.icon-close
 		display: none
 
-.head-toggle
-	&.active
-		.icon-close
-			display: block
-		.icon-open
-			display: none
+.head-toggle.slide-block-toggle--open
+	.icon-close
+		display: block
+	.icon-open
+		display: none
 
 .slide-block
-	+below(640px)
-		top 60px
-		height: calc(100% - 60px) // Высота шапки
-	+below(480px)
-		width: 100%
+	+below(768px)
+		padding: 30px 40px
 	position: fixed
 	top 60px // Высота шапки
-	width: 360px
+	width: 100%
 	tr(all)
 	height: calc(100% - 60px) // Высота шапки
 	z-index 100
 	background: white
-	&.active
-		transform translateX(0%)
+	padding: 30px
+	overflow auto
+	border-top 1px solid $border-color
 .slide-block--left
 	left 0
 	transform translateX(-100%)
@@ -213,11 +218,17 @@ body
 	right 0
 	transform translateX(100%)
 
-.slide-nav__el
-	display  block
+.slide-block--open
+	transform translateX(0%)
 
-.slide-block-wrap
-	padding: 24px
+.slide-nav__el
+	+below(640px)
+		padding: 22px
+	padding: 22px 0
+	font-weight: 500
+	color black
+	display block
+	@extend .type--md
 
 // slider menu === end
 
@@ -239,13 +250,15 @@ body
 	width: 200px
 
 .header-nav
-	+below(1200px)
+	+below(1023px)
 		display none
 	flex(between)
 	width: 55%
 	margin-left auto
 
 .header-nav__el
+	+below(1024px)
+		font-size: 16px
 	@extend .link
 	font-weight: 700
 // header === end
@@ -253,30 +266,90 @@ body
 // main-banner
 .main-banner-wrap
 	background: $green
+	overflow: hidden
 .main-banner
+	+below(1200px)
+		height calc(100vh - 60px)
+	+below(768px)
+		fl()
 	height calc(100vh - 100px)
 	f()
 	justify-content space-between
+
+.main-banner__info
+	+below(768px)
+		flex(mid)
+		fl()
+		max-width 480px
+		margin-left auto
+		margin-right auto
+
 .main-banner__img
+	+below(1300px)
+		width: 40%
+	+below(768px)
+		width: 100%
+		flex(mid)
 	width: 48%
 	f()
 	align-items: flex-end
 .main-banner__img-el
+	+below(1300px)
+		padding: 65%
+		background-position:40% center
+	+below(768px)
+		background-size contain
+		width: 100%
+		background-position:center
+		padding: 40%
 	bg-full()
 	width: 100%
 	padding: 44%
 .main-banner__cont
+	+below(1300px)
+		width: 60%
+	+below(768px)
+		width: 100%
+	+below(480px)
+		flex-grow 1
+		margin-bottom: -10%
 	width: 48%
 	color white
 	f()
 	justify-content center
 	fl()
 
+.main-banner-subTitle
+	+below(768px)
+		text-align center
+		margin-top: 30px
+	+below(640px)
+		font-size: 16px
+.main-banner-title
+	+below(768px)
+		text-align center
+	+below(640px)
+		font-size: 24px
+
 // main-banner === end
 .advant-el
+	+below(480px)
+		f()
 	.icon
+		+below(1024px)
+			size 70px
+		+below(480px)
+			size 48px
+			min-width 48px
+			margin-right: 20px
+			margin-bottom: 0
 		size 100px
 		margin-bottom: 24px
+
+.advant-el__text
+	+below(480px)
+		font-size: 12px
+		line-height: 1.6
 
 .banner-preview__img
 	f()
@@ -287,40 +360,67 @@ body
 .extendUp-img
 	+below(1024px)
 		margin-top: 40px
+	+below(768px)
+		margin-top: 0
+		max-width 400px
+		padding: 0 20px
 	margin: -5% 0 0 0
 
 .banner-preview
+	+below(1024px)
+		fl()
 	f()
 	background: white
-	br(10px)
+	br(20px)
 	overflow: hidden
 .banner-preview__img
+	+below(1024px)
+		width: 100%
+		padding: 5%
 	width: 50%
 	bg-full()
 	flex(mid)
 	img
+		max-width 540px
 		width: 75%
 
 .banner-preview__info
+	+below(1024px)
+		width: 100%
+	+below(768px)
+		padding: 60px
+	+below(640px)
+		padding: 20px
 	width: 50%
 	padding: 90px
 
 // config
-
 .config
 	height: 0
 	overflow: hidden
-	opacity: 0
-	tr(all)
+	opacity: 0.2
+	transition opacity .8s, transform .8s
 	transform: scale(.95, .95)
+	+below(640px)
+		margin-left: -20px
+		margin-right: -20px
 	&.active
 		transform: scale(1, 1)
 		opacity: 1
 		height: auto
 
 .config-nav
+	+below(640px)
+		overflow: auto
+		margin-left: -20px
+		margin-right: -20px
+		padding-bottom: 10px
+		justify-content: flex-start
 	flex(mid)
+	
 .config-nav__el
+	+below(640px)
+		margin-right: 20px
 	flex(mid)
 	br(8px)
 	box-shadow: 0px 4px 8px rgba(102, 130, 185, 0.12)
@@ -329,6 +429,7 @@ body
 	margin-right: 40px
 	cp()
 	transition color .4s
+	white-space nowrap
 	&:last-child
 		margin-right: 0
 	&:hover
@@ -346,8 +447,19 @@ body
 		.icon
 			fill $mark
 
+.config-content
+	+below(1024px)
+		max-width 520px
+		margin-left auto
+		margin-right auto
+	+below(640px)
+		padding: 0 20px
 .config-info
 	width: 100%
+
+.config-preview-nav
+	+below(1024px)
+		display none
 
 .config-preview-nav__el
 	bg-full()
@@ -383,6 +495,12 @@ body
 	position relative
 	z-index 5
 .title__shadow
+	+below(1024px)
+		font-size: 64px
+		bottom 10%
+	+below(640px)
+		font-size: 38px
+		bottom 20%
 	position absolute
 	left 0
 	bottom 0
@@ -393,13 +511,16 @@ body
 	z-index -1
 
 .work-el
+	+below(768px)
+		padding: 20px
+	padding: 40px
+	f()
+	align-items center
+	fl()
+	text-align center
 	.icon
 		size 100px
 		margin-bottom: 16px
-	padding: 40px
-	flex(mid)
-	fl()
-	text-align center
 
 .work-el-title
 	z-index 5
@@ -423,7 +544,8 @@ body
 		+below(1024px)
 			margin: 0 -8px
 		margin: 0 -14px
-.review-slider__el
+//.review-slider__el
+.review-slider__el-img
 	bg-full()
 	padding: 80% 10%
 	br(20px)
@@ -526,9 +648,15 @@ body
 
 // delivery
 .delivery-cont
+	+below(768px)
+		padding: 0
 	padding: 140px 0
 	position relative
 	.map
+		+below(768px)
+			position: static
+			padding: 20%
+			min-height 400px
 		position absolute
 		width: 100%
 		height: 100%
@@ -541,6 +669,14 @@ body
 	justify-content: flex-end
 	align-items: stretch
 .delivery-msg
+	+below(1280px)
+		width: 40%
+		padding: 40px
+		min-width 480px
+	+below(768px)
+		width: 100%
+		min-width auto
+		padding: 30px 20px 50px 20px
 	z-index 5
 	background: white
 	width: 40%
@@ -555,6 +691,7 @@ body
 .deliver-pick__el-color
 	round()
 	size 24px
+	min-width 24px
 	margin-right: 16px
 .deliver-pick__el-text
 	font-weight 700
@@ -602,15 +739,37 @@ body
 			color $mark
 	padding: 40px 0
 .footer
+	+below(720px)
+		fl()
 	flex(between)
 .footer-logo
+	+below(1280px)
+		margin-right: 20px
+	+below(768px)
+		width: 200px
+	+below(720px)
+		margin: 20px 0
+		order 2
 	margin-right: 5%
 .footer-nav
+	+below(1560px)
+		width: 30%
+	+below(1200px)
+		display none
 	flex(between)
 	width: 40%
 .footer-nav__el
+	+below(1560px)
+		font-size: 14px
+		margin: 0 5px
+	white-space nowrap
 	color white
 .footer-politick
+	+below(1560px)
+		font-size: 14px
+	+below(720px)
+		margin-bottom: 20px
+		order 3
 	color $typeSecondary
 	margin: 0 auto
 .footer-scroll
@@ -618,9 +777,9 @@ body
 		margin-left: 20px
 	+below(768px)
 		order 2
-	+below(640px)
+	+below(720px)
 		order 1
-		margin 0 0 32px 0
+		margin: 0
 	size 64px
 	min-width 64px
 	round()
@@ -638,17 +797,33 @@ body
 		tr()
 		fill white
 		size 20px
+.soc-row--footer
+	+below(720px)
+		order 4
 // footer === end
 
 
 // config box
-.config-box
+.contract-box
+	+below(768px)
+		padding: 40px
+	+below(640px)
+		padding: 20px
+		margin: -30px -20px
+		width calc(100% + 40px)
+		br(0)
 	max-width 1200px
 	width: 100%
 	margin-left auto
 	margin-right auto
 	padding: 80px
-.config-el
+	&.contract-box--sm
+		+below(640px)
+			padding: 20px
+		max-width 856px
+		padding: 40px
+
+.contract-el
 	padding: 20px
 	f()
 	align-items center
@@ -656,33 +831,50 @@ body
 	background: $greenLight
 	br(10px)
 	cp()
+	text-align center
 	&.active
 		background $mark
-		.config-el__val
+		.contract-el__val
 			color white
-		.config-el__title
+		.contract-el__title
 			color white
-		.config-el__descr
+		.contract-el__descr
 			color white
-.config-el__val
+.contract-el__val
 	@extend .type--xl
 	font-weight: 700
 	color $green
-.config-el__title
+.contract-el__title
 	color $green
 	font-weight: 700
-.config-el__descr
+.contract-el__descr
 	color #A9D96B
 	font-weight: 400
 
-.config-state-row
+.contract-state-row
+	+below(640px)
+		fl()
 	flex(mid)
-.config-state-row__val
+.contract-state-row__val
+	+below(640px)
+		text-align center
+		width: 100%
+		margin: 0
 	width: 50%
 	text-align: right
 	margin-right: 40px
-.config-state-row__descr
+.contract-state-row__descr
+	+below(640px)
+		text-align center
+		width: 100%
 	width: 50%
 .line
 	height: 1px
 // config box === end
+
+.subs-banner
+	+below(1024px)
+		padding: 100px 0
+		background-position: 40% 0
+	+below(640px)
+		padding: 40px 0

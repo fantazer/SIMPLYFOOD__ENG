@@ -61,10 +61,10 @@ calcGap(size1,size2,size3)
 	grid-gap size1 px
 	if size2
 		+below(1024px)
-			grid-ga size2 px
+			grid-gap size2 px
 	if size3
 		+below(640px)
-			grid-ga size3 px
+			grid-gap size3 px
 
 for $gridGapItem in $gridGap
 	.f-gap-{$gridGapItem}
@@ -87,4 +87,10 @@ for $windowSizeItem in $windowSize
 		.{$windowSizeItem[0]}__w{itemWidth*5}
 			@media only screen and (max-width: $windowSizeItem[1]px)
 					width (itemWidth*5) %
+
+for itemListWmax in $listWmax
+	.wmax-{itemListWmax}
+		max-width itemListWmax px
+		width: 100%
+
 // calc width === end

@@ -6,47 +6,46 @@ include block_html/_include.pug
 	.main-banner-wrap
 		.main-cont
 			.main-banner
-
 				.main-banner__cont
 					.main-banner__info
-						.type--mdx.type--700.mb-24 Your ticket to a tasty and healthy life
-						.type--lgx.type--800.mb-48 Delivery of ready meals without sugar, gluten, trans fats and preservatives
-						.f.f-gap-20
-							.btn.btn--md.btn--white Get Started
-							.btn.btn--md.btn--empty-white
+						.main-banner-subTitle.type--mdx.type--700.mb-24 Your ticket to a tasty and healthy life
+						.main-banner-title.type--lgx.type--800.mb-48 Delivery of ready meals without sugar, gluten, trans fats and preservatives
+						.f.f-gap-20.w100
+							a(href="#").btn.btn--md.btn--white.btn--mobile Get Started
+							a(href="#navMenu").btn.btn--md.btn--empty-white.sm__hide
 								.f.f-mid.f-gap-12
-									span Get Started
+									span See Menu
 									+icon("arrow-right","icon icon--md")
 				.main-banner__img
 					.main-banner__img-el(style="background-image:url('img/bg-el-1.png')")
 	.content
-		.section.pt-120.pb-120.bg--snow
+		#navAdvantages.section.pt-120.pb-120.bg--snow
 			.main-cont
-				.g.gap-20.g-3
+				.g.gap-20.g-3.lg__g-2.sm__g-1
 					.advant-el.bg--white.br--20.p-48
 						+icon("lists--color","icon")
-						.type--main Чистый вкус фермерских продуктов, все блюда из натуральных ингредиентов, без консервантов, трансжиров и «химии»
+						.advant-el__text.type--main Чистый вкус фермерских продуктов, все блюда из натуральных ингредиентов, без консервантов, трансжиров и «химии»
 					.advant-el.bg--white.br--20.p-48
 						+icon("cooking--color","icon")
-						.type--main Чтобы максимально точно передать вкус натуральных продуктов и сохранить все полезные витамины и минералы, мы готовим путём запекания, томления на пару и су-вид
+						.advant-el__text.type--main Чтобы максимально точно передать вкус натуральных продуктов и сохранить все полезные витамины и минералы, мы готовим путём запекания, томления на пару и су-вид
 					.advant-el.bg--white.br--20.p-48
 						+icon("nooil--color","icon")
-						.type--main При приготовлении не используем жарку, масло и вредные соусы. Не используем также рафинированные продукты, белую муку, красители и ароматизаторы
+						.advant-el__text.type--main При приготовлении не используем жарку, масло и вредные соусы. Не используем также рафинированные продукты, белую муку, красители и ароматизаторы
 					.advant-el.bg--white.br--20.p-48
 						+icon("flour--color","icon")
-						.type--main Используем цельные, богатые нутриентами продукты
+						.advant-el__text.type--main Используем цельные, богатые нутриентами продукты
 					.advant-el.bg--white.br--20.p-48
 						+icon("container--color","icon")
-						.type--main Используем биоразлагаемые контейнеры из кукурузного крахмала
+						.advant-el__text.type--main Используем биоразлагаемые контейнеры из кукурузного крахмала
 					.advant-el.bg--white.br--20.p-48
 						+icon("food--color","icon")
-						.type--main Ежедневно доставляем рацион, улучшающий ваше здоровье
+						.advant-el__text.type--main Ежедневно доставляем рацион, улучшающий ваше здоровье
 		.section
 			.main-cont
-				.f.f-gap-20.md__fw
-					.extendUp-img-wrap.block.w50
+				.f.md__fw
+					.extendUp-img-wrap.block.w50.md__w100.md__order-2
 						img(src="img/banner-1.png", alt="").extendUp-img
-					.f.block.w35.f-mid.ps-36.xl__w50
+					.f.block.w35.f-mid.pt-48.pb-48.md__w100
 						.text
 							ul
 								li Постоянный срыв режима питания
@@ -69,10 +68,10 @@ include block_html/_include.pug
 							p Наша посуда не содержит вредных и токсичных веществ, негативно влияющих на здоровье человека и полностью разлагается в почве, не нанося вред окружающей среде —  100% eco-friendy.
 
 							p Приборы положим в комплект только по вашему запросу при заказе.
-						.btn.btn--md.btn--mark Заказать питание
+						.btn.btn--md.btn--mark.btn--mobile Заказать питание
 
 
-		.section.pt-120.pb-120
+		#navMenu.section.pt-120.pb-120
 			.main-cont--sm
 				.type--lgx.type--mid.type--800.mb-36 Sample menu for the day according to the program Rational nutrition
 			.config-wrap.js-tab-wrap
@@ -93,38 +92,38 @@ include block_html/_include.pug
 							.config-preview-nav.g-2-2.js-tick-cont
 								- for (var i=1;i<=6;i++)
 									.config-preview-nav__el.js-tick(style="background-image:url('img/item-"+i+".jpg')" class=i===1?'active':'')
-							.config-info.g-3-11
+							.config-info.g-3-11.lg__g-1-12
 								.config-slider
 									- for (var i=1;i<=6;i++)
 										.config-slider__el-wrap
 											.row.gap-40
-												.config-slider__el.g-1-7(style="background-image:url('img/item-" + i + ".jpg')")
-												.config-info.g-8-12
+												.config-slider__el.g-1-7.lg__g-1-12(style="background-image:url('img/item-" + i + ".jpg')")
+												.config-content.g-8-12.lg__g-1-12
 													.f.f-aic.f-gap-20.mb-24
 														.bg--blueLight.p-16.br--10
 															.type--700 breakfast #{j+1}
 														.type--typeSecondary 106 Ккал
 													.type--lg.type--700.mb-20 Chicken cutlet with green buckwheat in a creamy nut sauce
 													.type--main.mb-36 Филе куриное, лук, яйцо, специи, гречка зелёная, соус сливочный, грецкие орехи, сливочно-ореховый соус
-													.f.f-aic.f-gap-20
-														.btn.btn--md.btn--mark Subscribe
+													.f.f-aic.f-gap-20.sm__fw
+														.btn.btn--md.btn--mark.btn--mobile Subscribe
 														.type--700.type--mdx from 31 £ per day
 
-		.section.pt-120.pb-120.subs-banner(style="background-image:url('img/bg-2.jpg')")
+		#navTrial.section.pt-120.pb-120.subs-banner(style="background-image:url('img/bg-2.jpg')")
 			.main-cont
 				.type--lgx.type--800.type--white.mb-12 Start with a 5 day trial
-				.row.g-gap-40.mb-24
+				.wmax-545.mb-24
 					.g-1-4
 						.type--md.type--white.mb-48 Order a 5-Day Food Trial Kit for just 999 £
 						.input-row.mb-16
 							input(type="text" placeholder="Your phone" class="input")
-				.btn.btn--mark.btn--md Get Started
+				.btn.btn--mark.btn--md.btn--mobile Get Started
 
-		.section.pt-120.pb-120.bg--snow
+		#navHow.section.pt-120.pb-120.bg--snow
 			.main-cont
 				.title.type--lgx.type--800.type--mid.mb-48 How it works
 					.title__shadow How it works
-				.g.gap-20.g-3
+				.g.gap-20.g-3.sm__g-1
 					.work-el.bg--white.br--20
 						+icon("check-step--color","icon")
 						.work-el-title.type--md.type--700.mb-16.pos-r.w100 Оставляете заявку
@@ -141,15 +140,16 @@ include block_html/_include.pug
 							.brush(style="background-image:url('img/brush.svg')")
 						.type--main Каждый день получаете от еды максимум пользы. Перед приёмом пищи вам нужно всего лишь разогреть её.
 
-		.section.pt-120.pb-120
+		#navReview.section.pt-120.pb-120
 			.main-cont
 				.title.type--lgx.type--800.type--mid.mb-48 Reviews
 					.title__shadow Reviews
 				.review-slider
 					- for (var i=0;i<8;i++)
-						.review-slider__el(style="background-image:url('img/item-1.jpg')")
+						.review-slider__el
+							.review-slider__el-img(style="background-image:url('img/item-1.jpg')")
 
-		.section.pt-120.pb-120.bg--snow
+		#navFaq.section.pt-120.pb-120.bg--snow
 			.main-cont--md
 				.title.type--lgx.type--800.type--mid.mb-48 FAQ
 					.title__shadow FAQ
@@ -177,7 +177,7 @@ include block_html/_include.pug
 									.accordion__el-content.text.js-accordion-content
 										p Платежный план «переезд в готовый дом» - дает возможность будущему покупателю переехать из квартиры в загородный дом без полной оплаты за домовладение! Для быстрого переезда в готовый загородный дом достаточно внести 10% от стоимости коттеджа и Вы можете заселяться!
 										p На продажу имеющейся в собственности у покупателя квартиры предоставляется рассрочка четыре месяца. По факту реализации квартиры оплачивается остаточная стоимость за домовладение.
-		.delivery-cont
+		#navDelivery.delivery-cont
 			.main-cont--md
 				.delivery-msg-wrap
 					.delivery-msg

@@ -59,12 +59,17 @@
 
 
 for $windowSizeItem in $windowSize
-	.{$windowSizeItem[0]}__show
+	.{$windowSizeItem[0]}__hide
 		//@media only screen and ({max-width} - ({$windowSizeItem[1]})px)
 		@media only screen and (max-width: $windowSizeItem[1]px)
 			display none!important
-	.{$windowSizeItem[0]}__hide
+	.{$windowSizeItem[0]}__snow
 		@media only screen and (min-width: $windowSizeItem[1]px)
 			display block
 
 
+for $orderItem in (1..4)
+	for $windowSizeItem in $windowSize
+		.{$windowSizeItem[0]}__order-{$orderItem}
+			@media only screen and (max-width: $windowSizeItem[1]px)
+				order $orderItem

@@ -8,13 +8,13 @@ mixin header()
 				.header-nav
 					-
 						var items = [
-							{name: "Advantages", id: "#advantages"},
-							{name: "Menu", id: "#menu"},
-							{name: "Trial week", id: "#trial"},
-							{name: "How it works", id: "#how"},
-							{name: "Reviews", id: "#reviews"},
-							{name: "FAQ", id: "#faq"},
-							{name: "Delivery", id: "#delivery"},
+							{name: "Advantages", id: "#navAdvantages"},
+							{name: "Menu", id: "#navMenu"},
+							{name: "Trial week", id: "#navTrial"},
+							{name: "How it works", id: "#navHow"},
+							{name: "Reviews", id: "#navReview"},
+							{name: "FAQ", id: "#navFaq"},
+							{name: "Delivery", id: "#navDelivery"},
 						];
 					each item in items
 						a(href=item.id).header-nav__el.js-scroll-to #{item.name}
@@ -27,14 +27,25 @@ mixin header()
 			.slide-nav
 				-
 					var items = [
-						{name: "Меню", id: "#navMenu"},
-						{name: "Как это работает", id: "#navWork"},
-						{name: "Пробный день", id: "#navTest"},
-						{name: "Отзывы", id: "#navReview"},
-						{name: "FAQ", id: "#navFAQ"},
-						{name: "Доставка", id: "#navDelivery"},
+						{name: "Advantages", id: "#navAdvantages"},
+						{name: "Menu", id: "#navMenu"},
+						{name: "Trial week", id: "#navTrial"},
+						{name: "How it works", id: "#navHow"},
+						{name: "Reviews", id: "#navReview"},
+						{name: "FAQ", id: "#navFaq"},
+						{name: "Delivery", id: "#navDelivery"},
 					];
 				each item in items
-					a(href = item.id).slide-nav__el.js-scroll-to #{item.name}
+					a(href = item.id).type--700.js-scroll-to.db.mb-24 #{item.name}
+
+				-
+					var items = [
+						'Terms of use',
+						'Cookie Policy',
+						'Privacy Policy',
+						'Terms & Conditions',
+						];
+				each item in items
+					a(href="#").type--700.db.mb-24.type--typeSecondary #{item}
 
 	//block header end

@@ -10,9 +10,12 @@
     "create-file": "^1.0.1",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "^2.3.1",
+    "gulp-cached": "^1.1.1",
+    "gulp-changed": "^4.0.2",
     "gulp-cheerio": "^0.6.2",
     "gulp-combine-mq": "^0.4.0",
     "gulp-filter": "*",
+    "gulp-group-css-media-queries": "^1.2.2",
     "gulp-html-prettify": "0.0.1",
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^2.4.0",
@@ -21,6 +24,7 @@
     "gulp-notify": "^2.2.0",
     "gulp-progeny": "0.2.2",
     "gulp-pug": "^3.3.0",
+    "gulp-pug-inheritance": "^0.2.1",
     "gulp-remember": "^0.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.1.2",
@@ -34,9 +38,6 @@
     "imagemin-pngquant": "^4.2.0",
     "run-sequence": "^1.1.5",
     "rupture": "^0.6.1",
-    "vinyl-ftp": "^0.4.4",
-    "gulp-cached": "^1.1.1",
-    "gulp-changed": "^4.0.2",
-    "gulp-pug-inheritance": "^0.2.1"
+    "vinyl-ftp": "^0.4.4"
   }
 }

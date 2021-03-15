@@ -41,20 +41,7 @@ $(document).ready(function () {
 	});*/
 	// ==== clear storage end =====
 
-	/* ###### For SlideToggle Elements  ######*/
-	/*var hideToggle = function(targetClick,toggleEl) {
-		$(targetClick).click(function(event){
-				event.stopPropagation();
-				$(toggleEl).slideToggle("fast");
-		});
-		$(toggleEl).on("click", function (event) {
-			event.stopPropagation();
-		});
-		$(document).on("click", function () {
-				$(toggleEl).hide();
-		});
-	}
-	hideToggle('.icon-bars','.top-menu_link');*/
+
 })
 
 //for init SVG
@@ -62,7 +49,7 @@ $(document).ready(function () {
 	'use strict';
 
 	var file = 'img/pack.html',
-		revision = 1;
+		revision = 15032021;
 
 	if (!document.createElementNS || !document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect)
 		return true;

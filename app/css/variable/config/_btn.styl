@@ -4,6 +4,7 @@
 	tr(all)
 	cp()
 	display inline-flex
+	justify-content center
 	background none
 	border 0
 	text-align: center
@@ -24,12 +25,12 @@
 
 .btn--lg
 	@extend .type--md
-	padding 20px 72px
+	padding 26px 72px
 
 .btn--mobile
-	+below(768px)
+	+below(480px)
 		width 100%
-
+		padding: 26px
 .btn--full
 	width: 100%
 	display block
@@ -81,6 +82,7 @@
 	border 1px solid transparent
 	&:hover
 		border 1px solid white
+		color white
 	.icon
 		fill white
 

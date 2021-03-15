@@ -956,9 +956,9 @@ for listSizeItem in $listSizeBoth
 	for listItem in $listExtend
 		.{listSizeItem[1]}-{listItem[0]}
 			calcExtendBoth(listSizeItem[0],listItem[0],listItem[1],listItem[2])*/
-.m-la {
+.ml-a {
   margin-left: auto;
 }
-.m-ra {
+.mr-a {
   margin-right: auto;
 }
