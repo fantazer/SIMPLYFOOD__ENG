@@ -280,19 +280,33 @@ $(document).ready(function () {
 				breakpoint: 1030,
 				settings: {
 					fade:false,
-					centerMode: true,
-					centerPadding: '40px',
-					slidesToShow: 1
+					slidesToShow: 2.2,
+					slidesToScroll: 1,
+					infinite: false,
+					arrows:false,
+					dots: false,
 				}
 			},
 			{
-				breakpoint: 640,
+				breakpoint: 769,
 				settings: {
-					arrows: false,
 					fade:false,
-					centerMode: true,
-					centerPadding: '20px',
-					slidesToShow: 1
+					slidesToShow: 1.8,
+					slidesToScroll: 1,
+					infinite: false,
+					arrows:false,
+					dots: false,
+				}
+			},
+			{
+				breakpoint: 481,
+				settings: {
+					fade:false,
+					slidesToShow: 1.2,
+					slidesToScroll: 1,
+					infinite: false,
+					arrows:false,
+					dots: false,
 				}
 			}
 		]

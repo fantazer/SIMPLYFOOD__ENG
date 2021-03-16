@@ -359,11 +359,13 @@ body
 	justify-content center
 .extendUp-img
 	+below(1024px)
-		margin-top: 40px
+		margin: 40px 40px 0 0
 	+below(768px)
 		margin-top: 0
 		max-width 400px
 		padding: 0 20px
+	+below(640px)
+		max-width: 100%
 	margin: -5% 0 0 0
 
 .banner-preview
@@ -401,7 +403,7 @@ body
 	opacity: 0.2
 	transition opacity .8s, transform .8s
 	transform: scale(.95, .95)
-	+below(640px)
+	+below(1024px)
 		margin-left: -20px
 		margin-right: -20px
 	&.active
@@ -449,11 +451,7 @@ body
 
 .config-content
 	+below(1024px)
-		max-width 520px
-		margin-left auto
-		margin-right auto
-	+below(640px)
-		padding: 0 20px
+		padding: 0 20px 20px 20px
 .config-info
 	width: 100%
 
@@ -475,15 +473,30 @@ body
 	&.active
 		opacity: .6
 .config-slider__el-wrap
+	+below(1024px)
+		bsh()
+		transform: scale(1,1)
+		br(20px)
+		overflow: hidden
 	transform: scale(.95, .95)
 .config-slider
 	.slick-active
-		overflow: hidden
 		.config-slider__el-wrap
 			transition transform .4s ease-in-out
 			transform: scale(1, 1);
-
+	.slick-slide
+		+below(1024px)
+			margin: 16px
+		+below(480px)
+			margin: 8px
+	.slick-list
+		+below(1024px)
+			margin: 0 -16px 0 0
+		+below(480px)
+			margin: 0 -8px 0 0
 .config-slider__el
+	+below(1024px)
+		border-radius 20px 20px 0 0
 	bg-full()
 	padding: 45% 10%
 	br(20px)
