@@ -54,14 +54,29 @@ include block_html/_include.pug
 							.type--main Your first delivery will be on <span class="type--700">Saturday 6 March 2021</span>
 
 					.type--lg.type--700.mb-20.type--mid Your billing address
-					.mb-20
-						+checkbox('This is the same as your delivery address')
-					.mb-20
-						+checkbox('Add your billing address','checked')
-					.input-row.mb-20
-						input(type="text"  class="input" placeholder="Search your address")
-					.mb-48
-						+checkbox('Enter address manually')
+
+
+					.mb-20.js-switch(data-group="billing" )
+						+radio('This is the same as your delivery address','billing','checked')
+					.mb-20.js-switch(data-group="billing" data-item="billingAdd")
+						+radio('Add your billing address','billing')
+
+					.js-switch-cont.hidden(data-group="billing" data-item="billingAdd")
+						.input-row.mb-32
+							input(type="text"  class="input" placeholder="Search your address")
+
+						.js-switch-cont.hidden(data-item="addressValue")
+							.g.g-2.sm__g-1.gap-32.mb-32
+								.input-row
+									input(type="text"  class="input" placeholder="Address line 1")
+								.input-row
+									input(type="text"  class="input" placeholder="Address line 2")
+								.input-row
+									input(type="text"  class="input" placeholder="Town/City")
+								.input-row
+									input(type="text"  class="input" placeholder="Postcode")
+						.mb-48.active.js-switch(data-item="addressValue")
+							+checkbox('Enter address manually')
 
 					.g.g-2.sm__g-1.gap-32.mb-48
 						.input-row

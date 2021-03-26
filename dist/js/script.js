@@ -135,7 +135,9 @@ $(document).ready(function () {
 	body.on('click', '.js-switch', function (e) {
 		if (e.target.className != 'style-input') {
 			var typeItem = $(this).data("item");
-			if ($(this).closest('.js-switch-wrap').length < 0) {
+				console.log($(this));
+			if ($(this).closest('.js-switch-wrap').length === 0) {
+				console.log("her");
 				var groupItem = $(this).data("group");
 				var selector = $('.js-switch[data-group=' + groupItem + ']');
 				var size = selector.size()

@@ -153,46 +153,60 @@
                             </div>
                         </div>
                         <div class="type--lg type--700 mb-20 type--mid">Your billing address</div>
-                        <div class="mb-20">
+                        <div class="mb-20 js-switch" data-group="billing">
                             <div class="check-el">
-                                <label class="style-label style-label--checkbox">
-                                    <input class="style-input" type="checkbox" />
+                                <label class="style-label style-label--radio">
+                                    <input class="style-input" type="radio" name="billing" checked="checked" />
                                     <div class="style-input-element">
-                                        <svg class="icon">
-                                            <use xlink:href="#checked"></use>
-                                        </svg>
+                                        <div class="icon-radio"></div>
                                     </div>
                                     <div class="style-input-text">This is the same as your delivery address</div>
                                 </label>
                             </div>
                         </div>
-                        <div class="mb-20">
+                        <div class="mb-20 js-switch" data-group="billing" data-item="billingAdd">
                             <div class="check-el">
-                                <label class="style-label style-label--checkbox">
-                                    <input class="style-input" type="checkbox" checked="checked" />
+                                <label class="style-label style-label--radio">
+                                    <input class="style-input" type="radio" name="billing" />
                                     <div class="style-input-element">
-                                        <svg class="icon">
-                                            <use xlink:href="#checked"></use>
-                                        </svg>
+                                        <div class="icon-radio"></div>
                                     </div>
                                     <div class="style-input-text">Add your billing address</div>
                                 </label>
                             </div>
                         </div>
-                        <div class="input-row mb-20">
-                            <input class="input" type="text" placeholder="Search your address" />
-                        </div>
-                        <div class="mb-48">
-                            <div class="check-el">
-                                <label class="style-label style-label--checkbox">
-                                    <input class="style-input" type="checkbox" />
-                                    <div class="style-input-element">
-                                        <svg class="icon">
-                                            <use xlink:href="#checked"></use>
-                                        </svg>
+                        <div class="js-switch-cont hidden" data-group="billing" data-item="billingAdd">
+                            <div class="input-row mb-32">
+                                <input class="input" type="text" placeholder="Search your address" />
+                            </div>
+                            <div class="js-switch-cont hidden" data-item="addressValue">
+                                <div class="g g-2 sm__g-1 gap-32 mb-32">
+                                    <div class="input-row">
+                                        <input class="input" type="text" placeholder="Address line 1" />
                                     </div>
-                                    <div class="style-input-text">Enter address manually</div>
-                                </label>
+                                    <div class="input-row">
+                                        <input class="input" type="text" placeholder="Address line 2" />
+                                    </div>
+                                    <div class="input-row">
+                                        <input class="input" type="text" placeholder="Town/City" />
+                                    </div>
+                                    <div class="input-row">
+                                        <input class="input" type="text" placeholder="Postcode" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-48 active js-switch" data-item="addressValue">
+                                <div class="check-el">
+                                    <label class="style-label style-label--checkbox">
+                                        <input class="style-input" type="checkbox" />
+                                        <div class="style-input-element">
+                                            <svg class="icon">
+                                                <use xlink:href="#checked"></use>
+                                            </svg>
+                                        </div>
+                                        <div class="style-input-text">Enter address manually</div>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="g g-2 sm__g-1 gap-32 mb-48">

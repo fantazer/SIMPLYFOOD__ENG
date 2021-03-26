@@ -3473,8 +3473,33 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  padding: 80% 10%;
-  border-radius: 20px;
+  padding: 50% 10%;
+  border-radius: 8px;
+}
+
+.review-slider-wrap {
+  padding: 16px 0 16px 0;
+  position: relative;
+}
+
+.review-slider-wrap:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100px;
+  bottom: 15px;
+  left: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0) 0%, #fff 100%);
+}
+
+.review-slider-content {
+  height: 270px;
+  overflow: auto;
+  padding-right: 16px;
+}
+
+.review-slider-text {
+  padding: 0 0 60px 0;
 }
 
 .accordion {
@@ -3966,6 +3991,21 @@ body {
 @media only screen and (min-width: 1024px) {
   .lg__snow {
     display: block;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .scroll-template-light::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 4px;
+    height: 8px;
+    background: #f8f8f8;
+    border-radius: 4px;
+  }
+
+  .scroll-template-light::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #dcdfe8;
   }
 }
 
