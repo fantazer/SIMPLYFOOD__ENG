@@ -79,16 +79,16 @@
     margin: 32px;
   }
 }
-.m-120 {
-  margin: 120px;
+.m-100 {
+  margin: 100px;
 }
 @media only screen and (max-width: 1024px) {
-  .m-120 {
+  .m-100 {
     margin: 60px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .m-120 {
+  .m-100 {
     margin: 40px;
   }
 }
@@ -173,16 +173,16 @@
     margin-top: 32px;
   }
 }
-.mt-120 {
-  margin-top: 120px;
+.mt-100 {
+  margin-top: 100px;
 }
 @media only screen and (max-width: 1024px) {
-  .mt-120 {
+  .mt-100 {
     margin-top: 60px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .mt-120 {
+  .mt-100 {
     margin-top: 40px;
   }
 }
@@ -267,16 +267,16 @@
     margin-right: 32px;
   }
 }
-.mr-120 {
-  margin-right: 120px;
+.mr-100 {
+  margin-right: 100px;
 }
 @media only screen and (max-width: 1024px) {
-  .mr-120 {
+  .mr-100 {
     margin-right: 60px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .mr-120 {
+  .mr-100 {
     margin-right: 40px;
   }
 }
@@ -361,16 +361,16 @@
     margin-bottom: 32px;
   }
 }
-.mb-120 {
-  margin-bottom: 120px;
+.mb-100 {
+  margin-bottom: 100px;
 }
 @media only screen and (max-width: 1024px) {
-  .mb-120 {
+  .mb-100 {
     margin-bottom: 60px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .mb-120 {
+  .mb-100 {
     margin-bottom: 40px;
   }
 }
@@ -455,16 +455,16 @@
     margin-left: 32px;
   }
 }
-.ml-120 {
-  margin-left: 120px;
+.ml-100 {
+  margin-left: 100px;
 }
 @media only screen and (max-width: 1024px) {
-  .ml-120 {
+  .ml-100 {
     margin-left: 60px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .ml-120 {
+  .ml-100 {
     margin-left: 40px;
   }
 }
@@ -549,16 +549,16 @@
     padding: 32px;
   }
 }
-.p-120 {
-  padding: 120px;
+.p-100 {
+  padding: 100px;
 }
 @media only screen and (max-width: 1024px) {
-  .p-120 {
+  .p-100 {
     padding: 60px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .p-120 {
+  .p-100 {
     padding: 40px;
   }
 }
@@ -643,16 +643,16 @@
     padding-top: 32px;
   }
 }
-.pt-120 {
-  padding-top: 120px;
+.pt-100 {
+  padding-top: 100px;
 }
 @media only screen and (max-width: 1024px) {
-  .pt-120 {
+  .pt-100 {
     padding-top: 60px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .pt-120 {
+  .pt-100 {
     padding-top: 40px;
   }
 }
@@ -737,16 +737,16 @@
     padding-right: 32px;
   }
 }
-.pr-120 {
-  padding-right: 120px;
+.pr-100 {
+  padding-right: 100px;
 }
 @media only screen and (max-width: 1024px) {
-  .pr-120 {
+  .pr-100 {
     padding-right: 60px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .pr-120 {
+  .pr-100 {
     padding-right: 40px;
   }
 }
@@ -831,16 +831,16 @@
     padding-bottom: 32px;
   }
 }
-.pb-120 {
-  padding-bottom: 120px;
+.pb-100 {
+  padding-bottom: 100px;
 }
 @media only screen and (max-width: 1024px) {
-  .pb-120 {
+  .pb-100 {
     padding-bottom: 60px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .pb-120 {
+  .pb-100 {
     padding-bottom: 40px;
   }
 }
@@ -925,16 +925,16 @@
     padding-left: 32px;
   }
 }
-.pl-120 {
-  padding-left: 120px;
+.pl-100 {
+  padding-left: 100px;
 }
 @media only screen and (max-width: 1024px) {
-  .pl-120 {
+  .pl-100 {
     padding-left: 60px;
   }
 }
 @media only screen and (max-width: 640px) {
-  .pl-120 {
+  .pl-100 {
     padding-left: 40px;
   }
 }
